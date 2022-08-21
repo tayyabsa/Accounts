@@ -1,0 +1,2 @@
+INSERT INTO accounts(id,balance,user_id, account_id) VALUES(1,100, 1, 'f12c1e4d-9838-4ca3-b5d7-b38b4bc4f5ee');
+INSERT INTO accounts(id,balance,user_id, account_id) VALUES(2,110, 2, '5b73c660-2f3e-4bcb-bc42-3202128a54eb');
