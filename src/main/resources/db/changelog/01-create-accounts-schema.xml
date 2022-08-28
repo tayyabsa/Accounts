@@ -20,6 +20,25 @@
             <column name="balance" type="decimal(12,2)" defaultValue="0.0"/>
         </createTable>
     </changeSet>
+
+
+    <changeSet id="02" author="tayyab">
+        <createTable tableName="transaction_history" remarks="Accounts Transaction Data">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="account_id" type="varchar(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="transaction_type" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="decimal(12,2)" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
 
 

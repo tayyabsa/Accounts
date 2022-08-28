@@ -3,6 +3,7 @@ package com.bsfdc.accounts.dto;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -22,5 +23,6 @@ public class AccountTransferRequestDto implements Serializable {
     private String destinationAccountId;
 
     @NotNull(message = "Amount can not be null")
+    @Positive(message = "Amount cant be negative")
     private BigDecimal amount;
 }

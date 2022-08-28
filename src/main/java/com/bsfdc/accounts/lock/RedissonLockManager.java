@@ -18,6 +18,7 @@ public class RedissonLockManager implements LockManager{
     public boolean lock(String lockName, Long ttlLockInMillis) {
         try {
             redissonClient.getLock(lockName).lock(ttlLockInMillis, TimeUnit.MILLISECONDS);
+            redissonClient.getLock(lockName).lock(ttlLockInMillis, TimeUnit.MILLISECONDS);
         } catch (Exception e){
             return false;
         }

@@ -6,6 +6,7 @@ import com.bsfdc.accounts.entity.Accounts;
 import com.bsfdc.accounts.exception.ApplicationException;
 import com.bsfdc.accounts.exception.NoDataFoundException;
 import com.bsfdc.accounts.repository.AccountsRepository;
+import com.bsfdc.accounts.repository.TransactionHistoryRepository;
 import com.bsfdc.accounts.service.impl.AccountsServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,11 +36,14 @@ public class AccountsServiceTest {
     @Mock
     private AccountsLockService accountsLockService;
 
+    @Mock
+    private TransactionHistoryRepository transactionHistoryRepository;
+
     private AccountsServiceImpl accountsService;
 
     @Before
     public void beforeAll() {
-        accountsService = new AccountsServiceImpl(accountsRepository, accountsLockService);
+        accountsService = new AccountsServiceImpl(accountsRepository, accountsLockService, transactionHistoryRepository);
     }
 
     @Test
